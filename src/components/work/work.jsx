@@ -1,97 +1,19 @@
-// import React, { useState } from 'react';
-// import './work.css'; // Make sure to import CSS file
-// import { allProjects } from './WorkData'; 
-
-// const projectsPerPage = 12;
-
-// function Work() {
-//   const [activeFilter, setActiveFilter] = useState('All');
-//   const [currentPage, setCurrentPage] = useState(1);
-
-//   // Function to handle going to the previous page
-//   const handlePreviousPage = () => {
-//     if (currentPage > 1) {
-//       setCurrentPage(currentPage - 1);
-//     }
-//   };
-
-//   // Function to handle going to the next page
-//   const handleNextPage = () => {
-//     const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
-//     if (currentPage < totalPages) {
-//       setCurrentPage(currentPage + 1);
-//     }
-//   };
-
-//   // Filter projects based on the selected category
-//   const filteredProjects = activeFilter === 'All'
-//     ? allProjects
-//     : allProjects.filter(project => project.category === activeFilter);
-
-//   // Calculate start and end indexes for pagination
-//   const startIndex = (currentPage - 1) * projectsPerPage;
-//   const endIndex = Math.min(startIndex + projectsPerPage, filteredProjects.length);
-
-//   // Displayed projects based on pagination
-//   const displayedProjects = filteredProjects.slice(startIndex, endIndex);
-
-//   return (
-//     <div id="work">
-//       <div className="projects-container">
-//         <div className="filter-container">
-//           <select 
-//             id="filter-select"
-//             onChange={(e) => setActiveFilter(e.target.value)}
-//             value={activeFilter}
-//           >
-//             <option value="All">All</option>
-//             <option value="Web">Web</option>
-//             <option value="Mobile">Mobile</option>
-//             <option value="Design">Design</option>
-//           </select>
-//         </div>
-
-//         <div className="projects-list">
-//           {displayedProjects.map((project, index) => (
-//             <div key={index} className="project-card">
-//               <div className="project-background" style={{ backgroundImage: `url(${project.image})` }}></div>
-//               <div className="project-content">
-//                 <h3><a href={project.url}>{project.title}</a></h3>
-//                 <span className="category-tag">{project.category}</span>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="pagination">
-//           <div>
-//             <span>Page {currentPage} from {Math.ceil(filteredProjects.length / projectsPerPage)}</span>
-//           </div>
-//           <div className="paginationButtons">
-//             <button onClick={handlePreviousPage} className={currentPage === 1 ? 'notAnyPage' : 'paginationButton'}>Back</button>
-//             <button onClick={handleNextPage} className={currentPage === Math.ceil(filteredProjects.length / projectsPerPage) ? 'notAnyPage' : 'paginationButton'}>Next</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Work;
-
-
-
 import React, { useState } from 'react';
-import './work.css'; // Make sure to import CSS file
-import { allProjects } from './WorkData'; 
+import Modal from 'react-modal';
+import './work.css';
+import './WorkDetailsModal.css';
+import { allProjects } from './WorkData';
+import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
+
 
 const projectsPerPage = 12;
 
 function Work() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
-  const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   // Function to handle going to the previous page
   const handlePreviousPage = () => {
@@ -111,12 +33,28 @@ function Work() {
   // Function to open the modal and set the selected project
   const handleOpenModal = (project) => {
     setSelectedProject(project);
-    setShowModal(true);
+    setModalIsOpen(true);
   };
 
-  // Function to close the modal
-  const handleCloseModal = () => {
-    setShowModal(false);
+  // Function to handle closing the modal
+  const handleModalClose = () => {
+    setModalIsOpen(false);
+  };
+
+  // Function to handle navigating to the next image
+  const handleNextImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      (prevIndex + 1) % selectedProject.images.length
+    );
+  };
+
+  // Function to handle navigating to the previous image
+  const handlePreviousImage = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0
+        ? selectedProject.images.length - 1
+        : prevIndex - 1
+    );
   };
 
   // Filter projects based on the selected category
@@ -150,11 +88,14 @@ function Work() {
         <div className="projects-list">
           {displayedProjects.map((project, index) => (
             <div key={index} className="project-card">
-              <div className="project-background" style={{ backgroundImage: `url(${project.image})` }} onClick={() => handleOpenModal(project)}></div>
-              <div className="project-content">
-                <h3><a href={project.url}>{project.title}</a></h3>
-                <span className="category-tag">{project.category}</span>
-              </div>
+              <a href="#" onClick={() => handleOpenModal(project)}>
+                <div className="project-background" style={{ backgroundImage: `url(${project.image})` }}>
+                  <div className="project-content">
+                    <h3><a href={project.url}>{project.title}</a></h3>
+                    <span className="category-tag">{project.category}</span>  
+                  </div>
+                </div>
+              </a>
             </div>
           ))}
         </div>
@@ -168,19 +109,72 @@ function Work() {
             <button onClick={handleNextPage} className={currentPage === Math.ceil(filteredProjects.length / projectsPerPage) ? 'notAnyPage' : 'paginationButton'}>Next</button>
           </div>
         </div>
-        
       </div>
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&times;</span>
-            <h2>{selectedProject.title}</h2>
-            <img src={selectedProject.image} alt={selectedProject.title} />
-            <p>{selectedProject.description}</p>
-            <a href={selectedProject.url}>Visit Project</a>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={handleModalClose}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+        ariaHideApp={false}
+      >
+        <div className="modal-header">
+          <h2>{selectedProject?.title}</h2>
+          <div className="modal-icons">
+            {selectedProject && (
+              <>
+                <a href={selectedProject.url} target="_blank" rel="noopener noreferrer" className="icon-link">
+                  <FaExternalLinkAlt /> <span>View Project</span>
+                </a>
+                <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="icon-link">
+                  <FaGithub /> <span>View GitHub</span>
+                </a>
+              </>
+            )}
+          </div>
+          <button className="close-button" onClick={handleModalClose}><FaTimes /></button>
+        </div>
+        <div className="modal-body content-container">
+          <div className="modal-left content">
+            <div className="modal-top-half">
+            <h4>About {selectedProject?.title}</h4>
+              {selectedProject?.description && selectedProject.description.map((desc, index) => (
+                <div key={index}>{desc}</div>
+              ))}
+            </div>
+            <hr/>
+            <div className="modal-bottom-half">
+              <h4>Tools</h4>
+              <div className="tools-list">
+                {selectedProject?.tools && selectedProject.tools.map((tool, index) => (
+                  <span key={index} className="tool" style={{ color: `#${Math.floor(Math.random()*16777215).toString(16)}`,marginRight: '10px' }}>
+                    #{tool} 
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="modal-right content">
+            <div className="image-container">
+              {selectedProject?.images &&
+                <img src={selectedProject.images[selectedImageIndex]} alt={selectedProject?.title} />
+              }
+              <div className="navigation-buttons">
+                {selectedProject?.images && selectedProject.images.length > 1 &&
+                  <>
+                    <a href='#' onClick={handlePreviousImage}>
+                      <FaChevronLeft />
+                    </a>
+                    <a href='#' onClick={handleNextImage}>
+                      <FaChevronRight />
+                    </a>
+                  </>
+                }
+              </div>
+            </div>
           </div>
         </div>
-      )}
+      </Modal>
     </div>
   );
 }

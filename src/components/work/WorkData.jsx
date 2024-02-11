@@ -4,6 +4,9 @@ import TabibiImg from '../../assets/works/Tabibi.png';
 import AppointifyImg from '../../assets/works/Appointify.png';
 import BarinWaveImg from '../../assets/works/BrainWave.png';
 
+import devosoftImg from '../../assets/companies/devosoft.png';
+import ofpptImg from '../../assets/companies/ofppt.png';
+import cabinetMedicalImg from '../../assets/companies/cabinet-medical.png';
 
 export const allProjects = [
   { 
@@ -14,9 +17,9 @@ export const allProjects = [
     url:'https://youtu.be/9ya1XUMEOTs',
     githubUrl: 'https://github.com/omarelhassani12/Tabibi',
     images: [
-      '../../assets/companies/devosoft.png',
-      '../../assets/companies/ofppt.png',
-      '../../assets/companies/cabinet-medical.png'
+      devosoftImg,
+      ofpptImg,
+      cabinetMedicalImg 
     ],
     tools:[
         'Flutter/Dart',
@@ -45,9 +48,9 @@ export const allProjects = [
     url:'#',
     githubUrl: 'https://github.com/omarelhassani12/gestion_d_absence',
     images: [
-        '../../assets/works/Tabibi.png',
-        '../../assets/companies/ofppt.png',
-        '../../assets/companies/cabinet-medical.png',
+      devosoftImg,
+      ofpptImg,
+      cabinetMedicalImg 
     ],
     tools:[
         'NodeJs',
