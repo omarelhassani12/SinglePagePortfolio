@@ -5,7 +5,6 @@ import './WorkDetailsModal.css';
 import { allProjects } from './WorkData';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 
-
 const projectsPerPage = 12;
 
 function Work() {
@@ -15,14 +14,12 @@ function Work() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  // Function to handle going to the previous page
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
 
-  // Function to handle going to the next page
   const handleNextPage = () => {
     const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
     if (currentPage < totalPages) {
@@ -30,43 +27,30 @@ function Work() {
     }
   };
 
-  // Function to open the modal and set the selected project
   const handleOpenModal = (project) => {
     setSelectedProject(project);
     setModalIsOpen(true);
   };
 
-  // Function to handle closing the modal
   const handleModalClose = () => {
     setModalIsOpen(false);
   };
 
-  // Function to handle navigating to the next image
   const handleNextImage = () => {
-    setSelectedImageIndex((prevIndex) =>
-      (prevIndex + 1) % selectedProject.images.length
-    );
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % selectedProject.images.length);
   };
 
-  // Function to handle navigating to the previous image
   const handlePreviousImage = () => {
-    setSelectedImageIndex((prevIndex) =>
-      prevIndex === 0
-        ? selectedProject.images.length - 1
-        : prevIndex - 1
-    );
+    setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? selectedProject.images.length - 1 : prevIndex - 1));
   };
 
-  // Filter projects based on the selected category
   const filteredProjects = activeFilter === 'All'
     ? allProjects
     : allProjects.filter(project => project.category === activeFilter);
 
-  // Calculate start and end indexes for pagination
   const startIndex = (currentPage - 1) * projectsPerPage;
   const endIndex = Math.min(startIndex + projectsPerPage, filteredProjects.length);
 
-  // Displayed projects based on pagination
   const displayedProjects = filteredProjects.slice(startIndex, endIndex);
 
   return (
@@ -84,7 +68,6 @@ function Work() {
             <option value="Design">Design</option>
           </select>
         </div>
-
         <div className="projects-list">
           {displayedProjects.map((project, index) => (
             <div key={index} className="project-card">
@@ -99,7 +82,6 @@ function Work() {
             </div>
           ))}
         </div>
-
         <div className="pagination">
           <div>
             <span>Page {currentPage} from {Math.ceil(filteredProjects.length / projectsPerPage)}</span>
@@ -110,7 +92,6 @@ function Work() {
           </div>
         </div>
       </div>
-
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={handleModalClose}
@@ -137,7 +118,7 @@ function Work() {
         <div className="modal-body content-container">
           <div className="modal-left content">
             <div className="modal-top-half">
-            <h4>About {selectedProject?.title}</h4>
+              <h4>About {selectedProject?.title}</h4>
               {selectedProject?.description && selectedProject.description.map((desc, index) => (
                 <div key={index}>{desc}</div>
               ))}
