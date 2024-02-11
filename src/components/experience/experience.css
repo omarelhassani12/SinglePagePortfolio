@@ -39,7 +39,14 @@
     width: 50px;
     margin-left: 20px;
     margin-right: 20px;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease; 
 }
+
+.skill-icon img:hover {
+    filter: grayscale(0%);
+}
+
 
 .places-worked {
     margin-top: 40px;
