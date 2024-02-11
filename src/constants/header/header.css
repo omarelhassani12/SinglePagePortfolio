@@ -1,0 +1,31 @@
+/* Header.css */
+
+#header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #43434E;
+}
+#header .logo a img{
+    width: 60px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#header .navbar{
+    margin-top: 25px;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+#header .navbar li{
+    list-style: none;
+}
+#header .navbar li a{
+    color: #fff;
+    text-decoration: none;
+}
+#header .navbar li a:hover{
+    color: #90909D;
+    text-decoration: none;
+}

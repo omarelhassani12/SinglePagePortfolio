@@ -1,0 +1,32 @@
+/* Home.css */
+
+#home {
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 60px); 
+    background-color: #43434E;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .top-home h1,
+#home .top-home h4,
+#home .bottom-home {
+    margin: 20px;
+    padding: 0;
+    width: 100%;
+    text-align: center; 
+}
+
+#home .bottom-home a {
+    margin: 30px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: none;
+    text-align: center; 
+    background-color: #90909D; /* Space color */
+    color: white; /* Text color */
+}

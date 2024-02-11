@@ -1,0 +1,23 @@
+#about{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#about h1{
+    margin-bottom: 40px;
+}
+
+#about img{
+   width: 200px;
+   margin-bottom: 40px;
+
+}
+#about p{
+   max-width: 40%;
+   text-align: center;
+}
+#about p a{
+   color: #06ae8d;
+}

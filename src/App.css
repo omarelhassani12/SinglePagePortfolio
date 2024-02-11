@@ -1,0 +1,27 @@
+/* App.css */
+
+/* Ensure body takes up full height */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  /* Style for the header */
+  #header {
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header stays on top */
+    background-color: #43434E; /* Header background color */
+    /* Add other header styles here */
+  }
+  
+  /* Style for the content */
+  #content {
+    padding-top: 60px; /* Ensure content starts below the header */
+    /* Add other content styles here */
+  }
+  

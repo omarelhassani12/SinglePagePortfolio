@@ -1,0 +1,96 @@
+#experience {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.top-container {
+    text-align: center;
+}
+
+.bottom-container {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.left-side {
+    width: 50%;
+    text-align: center;
+}
+
+.right-side {
+    width: 50%;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 40px 60px;
+}
+
+.skill-icon img {
+    width: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.places-worked {
+    margin-top: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.timeline-item {
+    flex: 0 0 calc(25% - 20px);
+    margin: 0 10px 20px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-item img {
+    width: 50%;
+}
+
+.description {
+    display: none;
+}
+
+.timeline-item.active .description {
+    display: block;
+}
+
+.description p {
+    margin: 5px 0;
+}
+
+.description-left,
+.description-right {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.description-right {
+    text-align: right;
+}
