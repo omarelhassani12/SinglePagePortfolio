@@ -93,7 +93,7 @@ function Experience() {
     <div id="experience">
       <div className="container">
         <div className="top-container">
-          <h2>Experience</h2>
+          <h2>EXPERIENCES</h2>
           <p>I've specialized in mobile development for 2 years and web development for about 3 years. I'm committed to continuous learning in this dynamic industry.</p>
         </div>
         <div className="bottom-container">

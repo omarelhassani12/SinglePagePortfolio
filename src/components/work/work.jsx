@@ -56,6 +56,7 @@ function Work() {
   return (
     <div id="work">
       <div className="projects-container">
+      <h2>SOME THINGS I'VE BUILT</h2>
         <div className="filter-container">
           <select 
             id="filter-select"

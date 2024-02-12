@@ -8,13 +8,11 @@
   width: 100%;
   margin: 0 auto;
 }
-
-/* .filter-container {
-  position: fixed;
-  top: 35%;
-  left: 20px;
-  z-index: 1;
-} */
+.projects-container h2{
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 0;
+}
 
 .filter-container {
   position: relative;
@@ -82,7 +80,7 @@ label {
 }
 
 .project-content h3 a{
-  color : #2ECC71;
+  color : rgba(10, 25, 47, 0.7);
 }
 
 .project-card:hover .project-content {

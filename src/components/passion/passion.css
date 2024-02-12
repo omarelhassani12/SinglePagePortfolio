@@ -14,12 +14,11 @@
 
 #passion .container h2 {
     text-align: center;
-    margin-top: 80px;
-    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 #passion .container .items {
-    margin-top: 10%;
+    margin-top: 3%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -28,14 +27,17 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #64ffdb15;
     text-align: center;
     max-width: 300px;
     margin-bottom: 20px;
 }
 
+
+
 .card h3 {
     margin-bottom: 35px;
+    color: #0a192f;
 }
 
 .card p {
@@ -45,6 +47,6 @@
 
 .icon {
     font-size: 56px;
-    color: #43434E;
+    color: #0a192f;
     margin-bottom: 20px;
 }

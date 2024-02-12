@@ -4,7 +4,7 @@ function Passion() {
   return (
     <div id="passion">
       <div className="container">
-        <h2>What I Do</h2>
+        <h2>WHAT I DO</h2>
         <div className="items">
           <div className="card">
             <div className="icon"><i className="fa fa-desktop"></i></div>

@@ -1,12 +1,13 @@
 /* Header.css */
 
-#header{
+#header {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
-    background-color: #43434E;
+    background-color: rgba(10, 25, 47, 0.7); 
 }
+
 #header .logo a img{
     width: 60px;
     margin-left: 20px;
@@ -26,6 +27,23 @@
     text-decoration: none;
 }
 #header .navbar li a:hover{
-    color: #90909D;
+    color: #64ffda;
     text-decoration: none;
+}
+
+#header .navbar li #hireMe{
+    margin: 30px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 1px solid #64ffda;
+    text-align: center; 
+    background-color: #90909d05; 
+    color: white;     
+}
+
+#header .navbar li #hireMe:hover {
+    border: 1px solid #64ffda;
+    text-align: center; 
+    background-color: #64ffdb86; 
+    color: white; 
 }

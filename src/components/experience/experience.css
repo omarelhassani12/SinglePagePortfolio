@@ -3,13 +3,13 @@
 }
 
 .container {
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 .top-container {
+    margin-top: 80px; 
     text-align: center;
 }
 
