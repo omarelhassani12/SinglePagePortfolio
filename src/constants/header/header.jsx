@@ -14,7 +14,7 @@ function Header() {
         <li><a href="/" onClick={(e) => scrollToSection('passion', e)}>Passion</a></li>
         <li><a href="/" onClick={(e) => scrollToSection('experience', e)}>Experiences</a></li>
         <li><a href="/" onClick={(e) => scrollToSection('work', e)}>Works</a></li>
-        <li><a href='/' id='hireMe' onClick={(e) => scrollToSection('contact', e)}>Hire me</a></li>
+        <li><a href='/' id='hireMe' onClick={(e) => scrollToSection('footer', e)}>Hire me</a></li>
       </ul>
     </div>
   );
