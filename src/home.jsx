@@ -1,56 +1,56 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css';
 import scrollToSection from './utils/scrollUtils';
 
 function Home() {
-  const [hoveredLetterH1, setHoveredLetterH1] = useState(null);
-  const [hoveredLetterH4, setHoveredLetterH4] = useState(null);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [hoveredLetters, setHoveredLetters] = useState([]);
 
-  const handleHoverH1 = (index) => {
-    setHoveredLetterH1(index);
-  };
+  const words = [' Web developer', ' Mobile developer', ' UX/UI designer'];
 
-  const handleHoverH4 = (index) => {
-    setHoveredLetterH4(index);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentText((prevText) => {
+        const nextIndex = prevText.length + 1;
+        const currentWord = words[currentWordIndex];
+        if (nextIndex <= currentWord.length) {
+          return currentWord.slice(0, nextIndex);
+        } else {
+          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length); 
+          return '';
+        }
+      });
+    }, 100); 
+
+    return () => clearInterval(interval);
+  }, [currentWordIndex, words]);
+
+  const handleHover = (index) => {
+    setHoveredLetters((prevLetters) => [...prevLetters, index]);
   };
 
   const handleLeave = () => {
-    setHoveredLetterH1(null);
-    setHoveredLetterH4(null);
+    setHoveredLetters([]);
   };
-
-  const textH1 = "HEY, I'M Omar";
-  const lettersH1 = textH1.split('');
-
-  const textH4 = "I'm a Mobile, Web developer & UX/UI designer";
-  const lettersH4 = textH4.split('');
 
   return (
     <div id="home">
       <div className="top-home">
-        <h1>
-          {lettersH1.map((letter, index) => (
-            <span
-              key={index}
-              onMouseEnter={() => handleHoverH1(index)}
-              onMouseLeave={handleLeave}
-              style={{ color: hoveredLetterH1 === index ? '#64ffda' : '#fff' }}
-            >
-              {letter}
-            </span>
-          ))}
-        </h1>
         <h4>
-          {lettersH4.map((letter, index) => (
+        I'm a   
+          {currentText.split('').map((letter, index) => (
             <span
               key={index}
-              onMouseEnter={() => handleHoverH4(index)}
+              onMouseEnter={() => handleHover(index)}
               onMouseLeave={handleLeave}
-              style={{ color: hoveredLetterH4 === index ? '#64ffda' : '#fff' }}
+              style={{ color: hoveredLetters.includes(index) ? '#64ffda' : '#fff' }}
             >
               {letter}
             </span>
           ))}
+        </h4>
+        <h4>
         </h4>
       </div>
       <ul className='bottom-home'>

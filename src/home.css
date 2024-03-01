@@ -1,5 +1,4 @@
 /* Home.css */
-
 #home {
     position: relative;
     top: -60px;
@@ -13,17 +12,18 @@
     align-items: center;
     justify-content: center;
     cursor: default;
+    background-image: radial-gradient(circle, #2a374b, #0a192f);
 }
 
 #home .top-home h1,
 #home .top-home h4 {
     font-size: 55px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #home .top-home h1,
 #home .top-home h4,
 #home .bottom-home {
-    margin: 20px;
     padding: 0;
     width: 100%;
     text-align: center;
@@ -35,12 +35,14 @@
 
 #home .bottom-home a {
     margin-top: 40px;
-    padding: 5px 20px;
-    border-radius: 20px;
-    border: 1px solid #64ffda;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid #64ffda;
     text-align: center; 
-    background-color: #90909d05; 
-    color: white; 
+    background-color: #001f3f;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 #link{
@@ -48,8 +50,7 @@
 }
 
 #home .bottom-home a:hover {
-    border: 1px solid #64ffda;
-    text-align: center; 
-    background-color: #64ffdb47; 
-    color: white; 
+    border-color: #64ffda;
+    background-color: #64ffdb47;
+    color: #64ffda; 
 }

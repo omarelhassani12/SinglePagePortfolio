@@ -13,26 +13,29 @@
     margin-left: 20px;
     margin-top: 5px;
 }
+
 #header .navbar{
     margin-top: 25px;
-    width: 40%;
     display: flex;
-    justify-content: space-around;
+    align-items: center; 
 }
+
 #header .navbar li{
     list-style: none;
+    margin-right: 20px;
 }
+
 #header .navbar li a{
     color: #fff;
     text-decoration: none;
 }
+
 #header .navbar li a:hover{
     color: #64ffda;
     text-decoration: none;
 }
 
 #header .navbar li #hireMe{
-    margin: 30px;
     padding: 5px 20px;
     border-radius: 20px;
     border: 1px solid #64ffda;
@@ -42,8 +45,5 @@
 }
 
 #header .navbar li #hireMe:hover {
-    border: 1px solid #64ffda;
-    text-align: center; 
-    background-color: #64ffdb86; 
-    color: white; 
+    background-color: #64ffdb86;
 }
