@@ -5,7 +5,7 @@ function Resume() {
         <div id="resume">
             <h2>Check out my resume!</h2>
             <div id="resume-button">
-            <a className="resume-btn" href="/CV-Omar-ELHASSANI.pdf" download="Omar-ELHASSANI.pdf">Grab A Copy</a>
+            <a className="resume-btn" href="/cv-Omar-ELHASSANI-fr.pdf" download="Omar-ELHASSANI.pdf">Grab A Copy</a>
             </div>
         </div>
     );

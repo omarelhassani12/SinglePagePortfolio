@@ -15,13 +15,13 @@ const skills = [
   { title: "Html", path: "../../assets/skills/html.png" },
   { title: "CSS", path: "../../assets/skills/css.png" },
   { title: "JavaScript", path: "../../assets/skills/js.png" },
+  { title: "Laravel", path: "../../assets/skills/laravel.png" },
   { title: "Java", path: "../../assets/skills/java.png" },
   { title: "jQuery", path: "../../assets/skills/jquery.png" },
   { title: "Socket.io", path: "../../assets/skills/socketio.png" },
   { title: "Bootstrap", path: "../../assets/skills/bootstrap.png" },
   { title: "GitHub", path: "../../assets/skills/github.png" },
   { title: "Git", path: "../../assets/skills/git.png" },
-  { title: "Trello", path: "../../assets/skills/trello.png" },
   { title: "Jira", path: "../../assets/skills/jira.png" },
   { title: "Linux", path: "../../assets/skills/linux.png" }
 ];

@@ -1,11 +1,12 @@
 import './about.css'
+import me from '../../assets/me.jpg';
 
 function About() {
 
   return (
     <div id="about">
         <h1>A LITTLE BIT ABOUT ME</h1>
-        <img src="/favicon.ico" alt="" />
+        <img src={me} alt="" />
         <p>Hello! I'm Omar EL HASSANI, a web and mobile developer deeply passionate about crafting captivating mobile applications.
             Currently, I'm a student at <a href='https://www.uca.ma' target='_blank'>Cadi Ayyad University</a>,
             studying Mathematics and Information Science.

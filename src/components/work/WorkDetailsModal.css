@@ -1,5 +1,3 @@
-/* WorkDetailsModal.css */
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -31,7 +29,7 @@
 }
 
 .modal-header h2 {
-  color: #2ECC71;
+  color: #0a192f;
   margin: 0;
 }
 
@@ -54,7 +52,8 @@
 .modal-bottom-half {
   padding-top: 20px;
 }
-.modal-bottom-half p{
+
+.modal-bottom-half p {
   font-weight: 600;
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
@@ -69,6 +68,8 @@
 .modal-right {
   flex: 1;
   padding-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .content {
@@ -79,34 +80,27 @@
 }
 
 .content h3 {
-  color: #2ecc71;
+  color: #0a192f;
 }
 
 .content p {
   line-height: 1.6;
 }
 
-.close-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 24px;
-}
-
-.close-button:hover {
-  color: #e74c3c; 
-}
-
 .image-container {
   position: relative;
   width: 100%;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container img {
-  width: 100%;
+  max-width: 55%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .navigation-buttons {
@@ -136,7 +130,6 @@
   font-size: 24px;
 }
 
-/* /// icons*/
 .modal-icons {
   display: flex;
   align-items: center;
@@ -144,7 +137,7 @@
 
 .icon-link {
   margin-right: 10px;
-  color: #2ecc71; /* Change color as needed */
+  color: #0a192f;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -160,9 +153,27 @@
   cursor: pointer;
   padding: 0;
   font-size: 24px;
-  color: #e74c3c; /* Close button color */
+  color: #FF0000;
 }
 
 .close-button:hover {
-  color: #c0392b; /* Close button hover color */
+  color: #a40b0b;
 }
+
+/* Media Queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+      width: 90%;
+      height: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+      width: 95%;
+      height: 95%;
+  }
+}
+
+

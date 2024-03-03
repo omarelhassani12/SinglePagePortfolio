@@ -11,7 +11,6 @@ function Footer() {
                     <p>Feel free to get in touch with any inquiries or collaborations.</p>
                     <ul className="contact-links">
                         <li>Email: <b>elhassani.omar12@gmail.com</b></li>
-                        <li>Phone: <b>+212633-959676</b></li>
                         <li><a href='https://omarelhassani.netlify.app'><b>Full Portfolio</b></a></li>
                     </ul>
                 </div>

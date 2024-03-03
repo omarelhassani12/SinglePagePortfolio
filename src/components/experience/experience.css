@@ -1,5 +1,6 @@
 #experience {
     height: 100vh;
+    background-color: #f2f2f26d;
 }
 
 .container {
@@ -9,7 +10,7 @@
 }
 
 .top-container {
-    margin-top: 80px; 
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -40,14 +41,13 @@
     width: 50px;
     margin-left: 20px;
     margin-right: 20px;
-    filter: grayscale(100%); 
-    transition: filter 0.3s ease; 
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
 .skill-icon img:hover {
     filter: grayscale(0%);
 }
-
 
 .places-worked {
     margin-top: 40px;
@@ -101,4 +101,25 @@
 
 .description-right {
     text-align: right;
+}
+
+@media (max-width: 768px) {
+    .left-side,
+    .right-side {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .skill-icon img {
+        width: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

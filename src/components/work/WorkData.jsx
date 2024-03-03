@@ -126,13 +126,6 @@ export const allProjects = [
   },
   { 
     id: 5, 
-    title: 'Saska', 
-    category: 'Design', 
-    image: NoImg,
-    githubUrl: '#'
-  },
-  { 
-    id: 6, 
     title: 'Scentit', 
     category: 'Web', 
     image: ScentitImg,
@@ -152,7 +145,7 @@ export const allProjects = [
     ],
   },
   { 
-    id: 7, 
+    id: 6, 
     title: 'Tabibi Web', 
     category: 'Web', 
     image: TabibiWebImg,
@@ -161,47 +154,24 @@ export const allProjects = [
     images: Object.values(TabibiWebImages),
   },
   { 
-    id: 8, 
-    title: 'Stock Management System', 
-    category: 'Web', 
-    image: NoImg,
-    githubUrl: 'https://github.com/omarelhassani12/Management-stock',
-    images: null,
-    tools:[
-      'HTML',
-      'CSS',
-      'JS',
-      'PHP',
-      'MySQL',
-      'FPDF',
-    ],
-  },
-  { 
-    id: 9, 
+    id: 7, 
     title: 'Restaurant Reservation', 
     category: 'Design', 
     image: NoImg,
     githubUrl: 'https://github.com/omarelhassani12/restaurant_reservation_flutter_app'
   },
   { 
-    id: 10, 
-    title: 'AsrooShop', 
+    id: 8, 
+    title: 'Saska', 
+    category: 'Design', 
+    image: NoImg,
+    githubUrl: '#'
+  },
+  { 
+    id: 9, 
+    title: 'AsShop', 
     category: 'Mobile', 
     image: NoImg,
     githubUrl: 'https://github.com/omarelhassani12/AsrooShop-using-flutter-and-firebase'
-  },
-  { 
-    id: 11, 
-    title: 'Interns Management System', 
-    category: 'Web', 
-    image: NoImg,
-    githubUrl: 'https://github.com/omarelhassani12/Stagiares-management-'
-  },
-  { 
-    id: 12, 
-    title: 'Staffs Management System', 
-    category: 'Web', 
-    image: NoImg,
-    githubUrl: 'https://github.com/omarelhassani12/SimpleStaffManagement'
   },
 ];

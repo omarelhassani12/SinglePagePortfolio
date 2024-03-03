@@ -56,7 +56,7 @@ function Work() {
   return (
     <div id="work">
       <div className="projects-container">
-      <h2>SOME THINGS I'VE BUILT</h2>
+        <h2>SOME THINGS I'VE BUILT</h2>
         <div className="filter-container">
           <select 
             id="filter-select"
@@ -83,15 +83,17 @@ function Work() {
             </div>
           ))}
         </div>
-        <div className="pagination">
-          <div>
-            <span>Page {currentPage} from {Math.ceil(filteredProjects.length / projectsPerPage)}</span>
+        {Math.ceil(filteredProjects.length / projectsPerPage) > 1 && (
+          <div className="pagination">
+            <div>
+              <span>Page {currentPage} from {Math.ceil(filteredProjects.length / projectsPerPage)}</span>
+            </div>
+            <div className="paginationButtons">
+              <button onClick={handlePreviousPage} className={currentPage === 1 ? 'notAnyPage' : 'paginationButton'}>Back</button>
+              <button onClick={handleNextPage} className={currentPage === Math.ceil(filteredProjects.length / projectsPerPage) ? 'notAnyPage' : 'paginationButton'}>Next</button>
+            </div>
           </div>
-          <div className="paginationButtons">
-            <button onClick={handlePreviousPage} className={currentPage === 1 ? 'notAnyPage' : 'paginationButton'}>Back</button>
-            <button onClick={handleNextPage} className={currentPage === Math.ceil(filteredProjects.length / projectsPerPage) ? 'notAnyPage' : 'paginationButton'}>Next</button>
-          </div>
-        </div>
+        )}
       </div>
       <Modal
         isOpen={modalIsOpen}
