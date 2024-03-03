@@ -103,7 +103,20 @@
     text-align: right;
 }
 
+@media (max-width: 1200px) {
+    #experience{
+        height: 150vh;
+    }
+    .left-side,
+    .right-side {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
+    #experience{
+        height: 150vh;
+    }
     .left-side,
     .right-side {
         width: 100%;
@@ -111,15 +124,22 @@
 }
 
 @media (max-width: 576px) {
+    #experience{
+        height: 220vh;
+    }
     .row {
         margin: 20px;
     }
 }
 
 @media (max-width: 400px) {
+    #experience{
+        height: 200vh;
+    }
     .skill-icon img {
         width: 40px;
         margin-left: 10px;
         margin-right: 10px;
     }
 }
+

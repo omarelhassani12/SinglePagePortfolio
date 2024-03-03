@@ -1,60 +1,9 @@
-/* Header.css */
-/* 
-#header {
+   #header {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(10, 25, 47, 0.7); 
-}
-
-#header .logo a img{
-    width: 60px;
-    margin-left: 20px;
-    margin-top: 5px;
-}
-
-#header .navbar{
-    margin-top: 25px;
-    display: flex;
-    align-items: center; 
-}
-
-#header .navbar li{
-    list-style: none;
-    margin-right: 20px;
-}
-
-#header .navbar li a{
-    color: #fff;
-    text-decoration: none;
-}
-
-#header .navbar li a:hover{
-    color: #64ffda;
-    text-decoration: none;
-}
-
-#header .navbar li #hireMe{
-    padding: 5px 20px;
-    border-radius: 20px;
-    border: 1px solid #64ffda;
-    text-align: center; 
-    background-color: #90909d05; 
-    color: white;     
-}
-
-#header .navbar li #hireMe:hover {
-    background-color: #64ffdb86;
-} */
-
-
-#header {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(10, 25, 47, 0.7); 
+    background-color: rgba(10, 25, 47, 0.7);
   }
   
   #header .logo a img {
@@ -66,11 +15,16 @@
   #header .navbar {
     margin-top: 25px;
     display: flex;
-    align-items: center; 
+    align-items: center;
+  }
+  
+  #header .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
   }
   
   #header .navbar li {
-    list-style: none;
     margin-right: 20px;
   }
   
@@ -88,35 +42,66 @@
     padding: 5px 20px;
     border-radius: 20px;
     border: 1px solid #64ffda;
-    text-align: center; 
-    background-color: #90909d05; 
-    color: white;     
+    text-align: center;
+    background-color: #90909d05;
+    color: white;
   }
   
   #header .navbar li #hireMe:hover {
     background-color: #64ffdb86;
   }
   
-  /* Media Queries for responsiveness */
+  /* Media Queries responsiveness */
   
   @media only screen and (max-width: 768px) {
     #header {
+      display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 10px;
     }
   
     #header .logo {
-      margin-bottom: 20px;
+      margin-bottom: 5px;
     }
   
     #header .navbar {
       margin-top: 10px;
       justify-content: center;
+      position: relative;
+    }
+  
+    #header .navbar ul {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(10, 25, 47, 0.7);
+      position: absolute;
+      top: 135%;
+      left: -80px;
+      width: 200px;
+      padding: 10px 0;
+    }
+  
+    #header .navbar.open ul {
+      display: block;
     }
   
     #header .navbar li {
-      margin-right: 10px;
+      text-align: center;
+      margin: 10px 0; 
+    }
+  
+    #header .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    #header .hamburger .line {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px;
     }
   }
   
