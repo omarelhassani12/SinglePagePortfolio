@@ -72,14 +72,14 @@ function Work() {
         <div className="projects-list">
           {displayedProjects.map((project, index) => (
             <div key={index} className="project-card">
-              <a href="#" onClick={() => handleOpenModal(project)}>
+              <div onClick={() => handleOpenModal(project)}>
                 <div className="project-background" style={{ backgroundImage: `url(${project.image})` }}>
                   <div className="project-content">
-                    <h3><a href={project.url}>{project.title}</a></h3>
+                    <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.title}</a></h3>
                     <span className="category-tag">{project.category}</span>  
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           ))}
         </div>
